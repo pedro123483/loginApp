@@ -88,7 +88,10 @@ app.post('/login', (req, res) => {
 
 app.get('/auth-endpoint', auth, (req, res) => {
     res.json({ message: 'you are authorized to access me' });
-    console.log(req.user);
+});
+
+app.get('/free-endpoint', (req, res) => {
+    res.json({ message: 'you are free to access me' });
 });
 
 app.listen(PORT, () => {
