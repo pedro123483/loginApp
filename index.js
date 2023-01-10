@@ -1,4 +1,4 @@
-import express, { response } from 'express';
+import express from 'express';
 import bodyParser from 'body-parser';
 import dotenv from 'dotenv';
 import dbConnect from './db/dbConnect.js';
@@ -8,7 +8,7 @@ import JWT from 'jsonwebtoken';
 import auth from './auth.js';
 
 const app = express();
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
